@@ -74,4 +74,18 @@ public class BinaryNode<T> {
         return (leftChild == null) && (rightChild == null);
     }
     
+    public BinaryNode<T> copy() {
+        BinaryNode<T> newRoot = new BinaryNode<>(data);
+        if (leftChild != null) 
+            newRoot.setLeftChild(leftChild.copy());
+        if (rightChild != null) 
+            newRoot.setRightChild(rightChild.copy());
+        
+        return newRoot;
+    }
+
+    public void postorderTraverse_binaryNodeMethod() {
+        BinaryTree<T> example = new BinaryTree<>();
+        example.postorderTraverse();
+    }
 }
