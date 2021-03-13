@@ -99,6 +99,26 @@ public class BinaryNode<T> {
             return rightChild.getRightMostData();
     }
 
+    public BinaryNode<T> removeLeftMost() {
+        if (leftChild == null) {
+            return rightChild;
+        }
+        else {
+            leftChild.leftChild.removeLeftMost();
+            return this;
+        }
+    }
+
+    public BinaryNode<T> removeRightMost() {
+        if (rightChild == null) {
+            return leftChild;
+        }
+        else {
+            rightChild.rightChild.removeRightMost();
+            return this;
+        }
+    }
+
     public void postorderTraverse_binaryNodeMethod() {
         BinaryNode<T> thing = new BinaryNode<T>();
         if (thing != null) {
