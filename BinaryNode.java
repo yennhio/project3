@@ -1,4 +1,5 @@
 public class BinaryNode<T> {
+    
     private T data;
     private BinaryNode<T> leftChild;
     private BinaryNode<T> rightChild;
@@ -84,8 +85,35 @@ public class BinaryNode<T> {
         return newRoot;
     }
 
+    public T getLeftMostData() {
+        if (leftChild == null)
+            return data;
+        else   
+            return leftChild.getLeftMostData();
+    }
+
+    public T getRightMostData() {
+        if (rightChild == null)
+            return data;
+        else   
+            return rightChild.getRightMostData();
+    }
+
     public void postorderTraverse_binaryNodeMethod() {
-        BinaryTree<T> example = new BinaryTree<>();
-        example.postorderTraverse();
+        BinaryNode<T> thing = new BinaryNode<T>();
+        if (thing != null) {
+            postorderTraverse_binaryNodeMethod(thing.getLeftChild());
+            postorderTraverse_binaryNodeMethod(thing.getRightChild());
+            System.out.println(thing.getData());
+        }
+    }
+
+    public int getHeight_binaryNodeMethod(BinaryNode<T> node) {
+        int height = 0;
+
+        if (node != null)
+            height = 1 + Math.max(getHeight_binaryNodeMethod(node.getLeftChild()),
+                                  getHeight_binaryNodeMethod(node.getRightChild()));
+        return height;
     }
 }
