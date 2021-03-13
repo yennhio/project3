@@ -4,6 +4,8 @@ import java.util.NoSuchElementException;
 public class BinaryTree<T> implements BinaryTreeInterface<T> {
     
     private BinaryNode<T> root;
+    private BinaryNode<T> leftChild;
+    private BinaryNode<T> rightChild;
 
     public BinaryTree() {
         root = null;
@@ -54,14 +56,22 @@ public class BinaryTree<T> implements BinaryTreeInterface<T> {
         thing.postorderTraverse_binaryNodeMethod();
     }
 
+    public int getHeight_callBinaryNodeMethod() {
+        return getHeight_binaryNodeMethod(root);
+    }
+
     public int getNumberOfNodes() {
+        return getNumberOfNodes(root);
+    }
+    
+    private int getNumberOfNodes(BinaryNode<T> node) {
         int leftNumber = 0;
         int rightNumber = 0;
 
         if (leftChild != null)
-            leftNumber = leftChild.getNumberOfNodes();
+            leftNumber = getNumberOfNodes(leftChild);
         if (rightChild != null)
-            rightNumber = rightChild.getNumberOfNodes();
+            rightNumber = getNumberOfNodes(rightChild);
 
         return 1 + leftNumber + rightNumber;
     }
