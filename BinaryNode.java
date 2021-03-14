@@ -105,7 +105,7 @@ public class BinaryNode<T> {
             return rightChild;
         }
         else {
-            leftChild.leftChild.removeLeftMost();
+            leftChild = leftChild.removeLeftMost();
             return this;
         }
     }
@@ -115,7 +115,7 @@ public class BinaryNode<T> {
             return leftChild;
         }
         else {
-            rightChild.rightChild.removeRightMost();
+            rightChild = rightChild.removeRightMost();
             return this;
         }
     }
