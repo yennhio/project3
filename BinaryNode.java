@@ -3,6 +3,7 @@ public class BinaryNode<T> {
     private T data;
     private BinaryNode<T> leftChild;
     private BinaryNode<T> rightChild;
+    BinaryNode<T> someTree = new BinaryNode<>();
 
     public BinaryNode() {
         this(null);
@@ -130,9 +131,9 @@ public class BinaryNode<T> {
     public int getHeight_binaryNodeMethod() {
         int height = 0;
 
-        if (node != null)
-            height = 1 + Math.max(getHeight_binaryNodeMethod(node.getLeftChild()),
-                                  getHeight_binaryNodeMethod(node.getRightChild()));
+        if (someTree != null)
+            height = 1 + Math.max(getLeftChild().getHeight_binaryNodeMethod(),
+                                  getRightChild().getHeight_binaryNodeMethod());
         return height;
     }
 }

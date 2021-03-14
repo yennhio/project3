@@ -6,6 +6,7 @@ public class BinaryTree<T> implements BinaryTreeInterface<T> {
     private BinaryNode<T> root;
     private BinaryNode<T> leftChild;
     private BinaryNode<T> rightChild;
+    BinaryNode<T> aRoot = new BinaryNode<>();
 
     public BinaryTree() {
         root = null;
@@ -52,12 +53,11 @@ public class BinaryTree<T> implements BinaryTreeInterface<T> {
     }
 
     public void postorderTraverse_callBinaryNodeMethod() {
-        BinaryNode<T> thing = new BinaryNode<>();
-        thing.postorderTraverse_binaryNodeMethod();
+        aRoot.postorderTraverse_binaryNodeMethod();
     }
 
     public int getHeight_callBinaryNodeMethod() {
-        return getHeight_binaryNodeMethod(root);
+        return aRoot.getHeight_binaryNodeMethod();
     }
 
     public int getNumberOfNodes() {
