@@ -121,10 +121,10 @@ public class BinaryNode<T> {
     }
 
     public void postorderTraverse_binaryNodeMethod() {
-        if (getData() != null) {
-            getLeftChild().postorderTraverse_binaryNodeMethod();
-            getRightChild().postorderTraverse_binaryNodeMethod();
-            System.out.println(getData());
+        if (root != null) {
+            (this.getLeftChild()).postorderTraverse_binaryNodeMethod();
+            (this.getRightChild()).postorderTraverse_binaryNodeMethod();
+            System.out.println(this.getData());
         }
     }
 
@@ -132,8 +132,8 @@ public class BinaryNode<T> {
         int height = 0;
 
         if (root != null)
-            height = 1 + Math.max(getLeftChild().getHeight_binaryNodeMethod(),
-                                  getRightChild().getHeight_binaryNodeMethod());
+            height = 1 + Math.max(this.getLeftChild().getHeight_binaryNodeMethod(),
+                                  this.getRightChild().getHeight_binaryNodeMethod());
         return height;
     }
 }

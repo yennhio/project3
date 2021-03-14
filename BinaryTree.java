@@ -67,10 +67,10 @@ public class BinaryTree<T> implements BinaryTreeInterface<T> {
         int leftNumber = 0;
         int rightNumber = 0;
 
-        if (leftChild != null)
-            leftNumber = getNumberOfNodes(leftChild);
-        if (rightChild != null)
-            rightNumber = getNumberOfNodes(rightChild);
+        if (node.getLeftChild() != null)
+            leftNumber = getNumberOfNodes(node.getLeftChild());
+        if (node.getRightChild() != null)
+            rightNumber = getNumberOfNodes(node.getRightChild());
 
         return 1 + leftNumber + rightNumber;
     }
