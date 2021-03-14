@@ -3,7 +3,7 @@ public class BinaryNode<T> {
     private T data;
     private BinaryNode<T> leftChild;
     private BinaryNode<T> rightChild;
-    BinaryNode<T> someTree = new BinaryNode<>();
+    BinaryNode<T> someTree;
 
     public BinaryNode() {
         this(null);

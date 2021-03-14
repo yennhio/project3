@@ -1,5 +1,5 @@
-import java.util.Iterator;
-import java.util.NoSuchElementException;
+import java.util.EmptyStackException;
+
 
 public class BinaryTree<T> implements BinaryTreeInterface<T> {
     
@@ -76,18 +76,39 @@ public class BinaryTree<T> implements BinaryTreeInterface<T> {
     }
 
     public int getHeight() {
-        return 0;
+        return getHeight(root);
     }
 
+    /** A Recursive Method in the BinaryTree Class  
+    * Computes the height of the subtree rooted at this node.
+   @return  The height of the subtree rooted at this node. */
+   private int getHeight(BinaryNode<T> node)
+   {
+      int height = 0;
+      if (node != null)
+         height = 1 + Math.max(getHeight(node.getLeftChild()),
+                               getHeight(node.getRightChild()));
+      return height;
+   }
+
     public void clear() {
+        root = null;
+    }
+
+    public void setRootData(T rootData)
+    {
+      root.setData(rootData);
     }
 
     public T getRootData(){
-        return null;
+        if (isEmpty())
+            throw new EmptyStackException();
+        else
+            return root.getData();
     }
 
     public boolean isEmpty() {
-        return true;
+        return root == null;
     }
 
     public void setTree(T rootData) {
@@ -96,6 +117,7 @@ public class BinaryTree<T> implements BinaryTreeInterface<T> {
 
     public void setTree(T rootData, BinaryTreeInterface<T> leftTree,
                                     BinaryTreeInterface<T> rightTree) {
-        privateSetTree(rootData, leftTree, rightTree);
+        privateSetTree(rootData, (BinaryTree<T>)leftTree,
+                                  (BinaryTree<T>)rightTree);
     }
 }
