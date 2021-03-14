@@ -43,7 +43,7 @@ public class BinaryTree<T> implements BinaryTreeInterface<T> {
         postorderTraverse(root);
     }
 
-    public void postorderTraverse(BinaryNode<T> node) {
+    private void postorderTraverse(BinaryNode<T> node) {
         if (node != null) {
             postorderTraverse(node.getLeftChild());
             postorderTraverse(node.getRightChild());
