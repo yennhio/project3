@@ -4,8 +4,6 @@ import java.util.EmptyStackException;
 public class BinaryTree<T> implements BinaryTreeInterface<T> {
     
     private BinaryNode<T> root;
-    private BinaryNode<T> leftChild;
-    private BinaryNode<T> rightChild;
 
     public BinaryTree() {
         root = null;
