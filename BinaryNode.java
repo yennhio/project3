@@ -3,7 +3,7 @@ public class BinaryNode<T> {
     private T data;
     private BinaryNode<T> leftChild;
     private BinaryNode<T> rightChild;
-    BinaryNode<T> someTree;
+    BinaryNode<T> root;
 
     public BinaryNode() {
         this(null);
@@ -121,7 +121,7 @@ public class BinaryNode<T> {
     }
 
     public void postorderTraverse_binaryNodeMethod() {
-        if (someTree != null) {
+        if (getData() != null) {
             getLeftChild().postorderTraverse_binaryNodeMethod();
             getRightChild().postorderTraverse_binaryNodeMethod();
             System.out.println(getData());
@@ -131,7 +131,7 @@ public class BinaryNode<T> {
     public int getHeight_binaryNodeMethod() {
         int height = 0;
 
-        if (someTree != null)
+        if (root != null)
             height = 1 + Math.max(getLeftChild().getHeight_binaryNodeMethod(),
                                   getRightChild().getHeight_binaryNodeMethod());
         return height;
