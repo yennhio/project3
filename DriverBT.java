@@ -19,7 +19,6 @@ public class DriverBT {
 		System.out.println();
 		
 		System.out.println("(BinaryTree) # nodes of tree is " + aTree.getNumberOfNodes());
-		//System.out.println("(BinaryNode) # nodes of tree is " + aTree.getNumberOfNodes_callBinaryNodeMethod());
 
 		System.out.println("==========================================");
 		System.out.println();
@@ -42,7 +41,6 @@ public class DriverBT {
 		System.out.println();
 		
 		System.out.println("(BinaryTree) # nodes of tree is " + aTree2.getNumberOfNodes());
-		//System.out.println("(BinaryNode) # nodes of tree is " + aTree2.getNumberOfNodes_callBinaryNodeMethod());
 		
 		System.out.println("Done.");
 	}  // end main

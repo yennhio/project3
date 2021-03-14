@@ -121,7 +121,7 @@ public class BinaryNode<T> {
     }
 
     public void postorderTraverse_binaryNodeMethod() {
-        if (getLeftChild() != null) {
+        if (someTree != null) {
             getLeftChild().postorderTraverse_binaryNodeMethod();
             getRightChild().postorderTraverse_binaryNodeMethod();
             System.out.println(getData());
