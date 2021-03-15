@@ -25,26 +25,28 @@ public class DriverBT {
 
 	public static void createTree2(BinaryTree<String> tree)
 	{ 
-		// Leaves
-		BinaryTree<String> dTree = new BinaryTree<>("D");
-		BinaryTree<String> eTree = new BinaryTree<>("E");
+		// Leaves:
+		BinaryTree<String> fTree = new BinaryTree<>("F");
 		BinaryTree<String> gTree = new BinaryTree<>("G");
+		BinaryTree<String> hTree = new BinaryTree<>("H");
 
 		// Subtrees:
-		BinaryTree<String> fTree = new BinaryTree<>("F", null, gTree);
-		BinaryTree<String> bTree = new BinaryTree<>("B", dTree, eTree);
-		BinaryTree<String> cTree = new BinaryTree<>("C", fTree, null);
+		BinaryTree<String> dTree = new BinaryTree<>("D", fTree, null);
+		BinaryTree<String> eTree = new BinaryTree<>("E", gTree, hTree);
+		BinaryTree<String> bTree = new BinaryTree<>("B", null, null);
+		BinaryTree<String> cTree = new BinaryTree<>("C", dTree, eTree);
 
+		// Root: 
 		tree.setTree("A", bTree, cTree);
 		
       System.out.println("\nGiven Tree:\n");
-      System.out.println("     A      ");
-      System.out.println("   /   \\  ");
-      System.out.println("  B     C  ");
-      System.out.println(" / \\   /  ");
-      System.out.println("D   E  F   ");
-      System.out.println("        \\ ");
-      System.out.println("         G ");
+      System.out.println("     A             ");
+      System.out.println("   /   \\          ");
+      System.out.println("  B     C          ");
+      System.out.println("       /  \\       ");
+      System.out.println("      D     E      ");
+      System.out.println("     /     /  \\   ");
+      System.out.println("    F     G     H  ");
       System.out.println();
 	} // end createTree
 	
