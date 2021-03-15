@@ -121,11 +121,13 @@ public class BinaryNode<T> {
 
     public void postorderTraverse_binaryNodeMethod() {
 
-        if (data != null) {
+        if (leftChild != null)
             leftChild.postorderTraverse_binaryNodeMethod();
+        if (rightChild != null)
             rightChild.postorderTraverse_binaryNodeMethod();
-            System.out.println(this.getData());
-        }
+        if (data != null) 
+            System.out.println(data);
+        
     }
 
     public int getHeight_binaryNodeMethod() {
