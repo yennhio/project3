@@ -32,30 +32,54 @@ public class Testing {
          *    G   H
          */
 
-    //Tests BinaryTree.postorderTraverse(); postorder traversal of the whole tree
+    /**Tests BinaryTree.postorderTraverse() which calls 
+     * BinaryNode.postorderTraverse(BinaryNode<T> node) 
+     * for postorder traversal of the whole tree
+    */
     @Test
     public void testPostorderTraverse() {
         createTree(aTree);
         aTree.postorderTraverse();    
     }
 
+    /** Tests BinaryTree.postorderTraverse_callBinaryNodeMethod()
+     * which calls BinaryNode.postorderTraverse_binaryNodeMethod()
+     * to perform postorder traversal of the whole tree
+     */
     @Test
     public void testPostorderTraverse_callBinaryNodeMethod() {
         createTree(aTree);
         aTree.postorderTraverse_callBinaryNodeMethod();    
     }
 
+    /** Tests BinaryTree.getHeight() 
+     * Computes the height of the tree
+     */
     @Test
     public void testGetHeight() {
         createTree(aTree);
         assertEquals(4, aTree.getHeight());
     }
 
+    /** Tests BinaryTree.getHeight_callBinaryNodeMethod() 
+     * Computes the height of the tree
+     */
     @Test
-    public void testGetHeight_binaryNodeMethod() {
+    public void testGetHeight_callBinaryNodeMethod() {
         createTree(aTree);
         assertEquals(4, aTree.getHeight_callBinaryNodeMethod());
     }
+
+    /** Tests BinaryTree.getNumberOfNodes() 
+     * Computes the number of nodes in the tree
+     */
+    @Test
+    public void testGetNumberOfNodes() {
+        createTree(aTree);
+        assertEquals(8, aTree.getNumberOfNodes());
+    }
+
+    
 
     
     
