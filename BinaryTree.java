@@ -17,6 +17,29 @@ public class BinaryTree<T> implements BinaryTreeInterface<T> {
         privateSetTree(rootData, leftTree, rightTree);
     } //end constructor
 
+    /** Sets this binary tree to a new one-node binary tree.
+     * @param rootData The object that is the data for the new tree's root.
+     */
+    public void setTree(T rootData) {
+        root = new BinaryNode<>(rootData);
+    }
+
+    /** Sets this binary tree to a new binary tree.
+     * @param rootData The object that is the data for the new tree's root.
+     * @param leftTree The left subtree of the new tree.
+     * @param rightTree The right subtree of the new tree.
+     */
+    public void setTree(T rootData, BinaryTreeInterface<T> leftTree,
+                                    BinaryTreeInterface<T> rightTree) {
+        privateSetTree(rootData, (BinaryTree<T>)leftTree,
+                                  (BinaryTree<T>)rightTree);
+    }
+
+    /** Sets a new binary tree.
+     * @param rootData The object that is the data for the new tree's root.
+     * @param leftTree The left subtree of the new tree.
+     * @param rightTree The right subtree of the new tree.
+     */
     private void privateSetTree(T rootData, BinaryTree<T> leftTree, BinaryTree<T> rightTree) {
         root = new BinaryNode<>(rootData);
         
@@ -37,10 +60,14 @@ public class BinaryTree<T> implements BinaryTreeInterface<T> {
             rightTree.clear();
     }
 
+    /** Performs postorder traversal of the whole tree. */
     public void postorderTraverse() {
         postorderTraverse(root);
     }
 
+    /** Performs postorder traversal of a subtree rooted at a given node.
+     * @param node The location of the root of the subtree 
+     */
     private void postorderTraverse(BinaryNode<T> node) {
         if (node != null) {
             postorderTraverse(node.getLeftChild());
@@ -49,18 +76,27 @@ public class BinaryTree<T> implements BinaryTreeInterface<T> {
         }
     }
 
+    /** Calls BinaryNode.postorderTraverse_binaryNodeMethod() 
+     * to perform postorder traversal of the whole tree. */
     public void postorderTraverse_callBinaryNodeMethod() {
         root.postorderTraverse_binaryNodeMethod();
     }
 
+    /** Calls BinaryNode.getHeight_binaryNodeMethod() to 
+     * return the height of the whole tree. */
     public int getHeight_callBinaryNodeMethod() {
         return root.getHeight_binaryNodeMethod();
     }
 
+    /** Calls the method getNumberOfNodes(BinaryNode<T> node) to 
+     * return the number of nodes of the whole tree. */
     public int getNumberOfNodes() {
         return getNumberOfNodes(root);
     }
     
+    /** Returns the number of nodes of a subtree rooted at a given node. 
+     * @param node The location of the root
+    */
     private int getNumberOfNodes(BinaryNode<T> node) {
         int leftNumber = 0;
         int rightNumber = 0;
@@ -73,6 +109,7 @@ public class BinaryTree<T> implements BinaryTreeInterface<T> {
         return 1 + leftNumber + rightNumber;
     }
 
+    /** Returns the height of the whole tree. */
     public int getHeight() {
         return getHeight(root);
     }
@@ -89,15 +126,20 @@ public class BinaryTree<T> implements BinaryTreeInterface<T> {
       return height;
    }
 
+    /** Sets the root to null, hence the tree becomes empty. */
     public void clear() {
         root = null;
     }
 
+    /** Sets the root data.
+     * @param rootData The object that is the data for the new tree's root.
+     */
     public void setRootData(T rootData)
     {
       root.setData(rootData);
     }
 
+    /** Gets the root data. */
     public T getRootData(){
         if (isEmpty())
             throw new EmptyStackException();
@@ -105,17 +147,12 @@ public class BinaryTree<T> implements BinaryTreeInterface<T> {
             return root.getData();
     }
 
+    /** Checks whether the root is empty.
+     * @return True if the root is empty, otherwise false.
+     */
     public boolean isEmpty() {
         return root == null;
     }
 
-    public void setTree(T rootData) {
-        root = new BinaryNode<>(rootData);
-    }
-
-    public void setTree(T rootData, BinaryTreeInterface<T> leftTree,
-                                    BinaryTreeInterface<T> rightTree) {
-        privateSetTree(rootData, (BinaryTree<T>)leftTree,
-                                  (BinaryTree<T>)rightTree);
-    }
+    
 }

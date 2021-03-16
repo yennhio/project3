@@ -119,6 +119,9 @@ public class BinaryNode<T> {
         }
     }
 
+
+    /** Performs postorder traversal of a subtree rooted at a BinaryNode object.
+     */
     public void postorderTraverse_binaryNodeMethod() {
 
         if (leftChild != null)
@@ -130,6 +133,9 @@ public class BinaryNode<T> {
         
     }
 
+    /** Computes the height of a subtree rooted at a BinaryNode object.
+     * @return the height of that subtree.
+     */
     public int getHeight_binaryNodeMethod() {
         int height = 0;
 
