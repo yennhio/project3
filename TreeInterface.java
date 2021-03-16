@@ -1,7 +1,9 @@
 
 public interface TreeInterface<T> {
 
-    /** Gets the root data. */
+    /** Gets the root data. 
+     * @throws EmptyTreeException 
+     * */
     public T getRootData();
 
     /** Computes the height of the whole tree.

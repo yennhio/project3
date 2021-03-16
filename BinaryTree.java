@@ -1,5 +1,3 @@
-import java.util.EmptyStackException;
-
 
 public class BinaryTree<T> implements BinaryTreeInterface<T> {
     
@@ -73,13 +71,16 @@ public class BinaryTree<T> implements BinaryTreeInterface<T> {
       root.setData(rootData);
     }
 
-    /** Gets the root data. */
-    public T getRootData(){
+    /** Gets the root data. 
+     * @throws EmptyTreeException
+     * */
+    public T getRootData() {
         if (isEmpty())
-            throw new EmptyStackException();
+            throw new EmptyTreeException();
         else
             return root.getData();
     }
+
 
     /** Checks whether the root is empty.
      * @return True if the root is empty, otherwise false.
