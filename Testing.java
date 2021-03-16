@@ -1,7 +1,4 @@
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertSame;
-import static org.junit.jupiter.api.Assertions.assertEquals;
-
 import org.junit.Test;
 
 public class Testing {
@@ -20,19 +17,19 @@ public class Testing {
             tree.setTree("A", bTree, cTree);
         }
 
-              
-
+        BinaryTree<String> aTree = new BinaryTree<>();  
+        
     @Test
     public void testPostorderTraverse() {
-        BinaryTree<String> aTree = new BinaryTree<>();  
+        
         createTree(aTree);
-        assertEquals("example output", aTree.postorderTraverse());    
+        aTree.postorderTraverse();    
     }
 
     @Test
     public void testPostorderTraverse_callBinaryNodeMethod() {
         createTree(aTree);
-        assertEquals("A\nD", aTree.postorderTraverse_callBinaryNodeMethod());    
+        aTree.postorderTraverse_callBinaryNodeMethod();    
     }
     
     
