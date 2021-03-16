@@ -60,6 +60,34 @@ public class BinaryTree<T> implements BinaryTreeInterface<T> {
             rightTree.clear();
     }
 
+    /** Sets the root to null, hence the tree becomes empty. */
+    public void clear() {
+        root = null;
+    }
+
+    /** Sets the root data.
+     * @param rootData The object that is the data for the new tree's root.
+     */
+    public void setRootData(T rootData)
+    {
+      root.setData(rootData);
+    }
+
+    /** Gets the root data. */
+    public T getRootData(){
+        if (isEmpty())
+            throw new EmptyStackException();
+        else
+            return root.getData();
+    }
+
+    /** Checks whether the root is empty.
+     * @return True if the root is empty, otherwise false.
+     */
+    public boolean isEmpty() {
+        return root == null;
+    }
+
     /** Performs postorder traversal of the whole tree. */
     public void postorderTraverse() {
         postorderTraverse(root);
@@ -109,6 +137,13 @@ public class BinaryTree<T> implements BinaryTreeInterface<T> {
         return 1 + leftNumber + rightNumber;
     }
 
+    /** Calls BinaryNode.getNumberOfNodes_binaryNodeMethod()
+     * to return the number of nodes in the whole tree.
+     */
+    public int getNumberOfNodes_callBinaryNodeMethod() {
+        return root.getNumberOfNodes_binaryNodeMethod();
+    }
+
     /** Returns the height of the whole tree. */
     public int getHeight() {
         return getHeight(root);
@@ -126,33 +161,5 @@ public class BinaryTree<T> implements BinaryTreeInterface<T> {
       return height;
    }
 
-    /** Sets the root to null, hence the tree becomes empty. */
-    public void clear() {
-        root = null;
-    }
-
-    /** Sets the root data.
-     * @param rootData The object that is the data for the new tree's root.
-     */
-    public void setRootData(T rootData)
-    {
-      root.setData(rootData);
-    }
-
-    /** Gets the root data. */
-    public T getRootData(){
-        if (isEmpty())
-            throw new EmptyStackException();
-        else
-            return root.getData();
-    }
-
-    /** Checks whether the root is empty.
-     * @return True if the root is empty, otherwise false.
-     */
-    public boolean isEmpty() {
-        return root == null;
-    }
-
-    
+        
 }
