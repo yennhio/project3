@@ -15,11 +15,24 @@ public class Testing {
 		    BinaryTree<String> eTree = new BinaryTree<>("E", gTree, null);
 		    BinaryTree<String> bTree = new BinaryTree<>("B", dTree, null);
 		    BinaryTree<String> cTree = new BinaryTree<>("C", eTree, fTree);
+        
+        //Root:    
             tree.setTree("A", bTree, cTree);
         }
 
         BinaryTree<String> aTree = new BinaryTree<>();  
 
+        /**
+         *      A
+         *     / \
+         *    B   C
+         *   /   / \ 
+         *  D   E   F
+         *     /   /
+         *    G   H
+         */
+
+    //Tests BinaryTree.postorderTraverse(); postorder traversal of the whole tree
     @Test
     public void testPostorderTraverse() {
         createTree(aTree);
