@@ -1,6 +1,6 @@
 
 public interface TreeInterface<T> {
-    
+
     /** Gets the root data. */
     public T getRootData();
 
@@ -19,6 +19,6 @@ public interface TreeInterface<T> {
      */
     public boolean isEmpty();
 
-    /** Sets the root to null, hence the tree is empty. */
+    /** Sets the root to null, hence the tree becomes empty. */
     public void clear();
 }

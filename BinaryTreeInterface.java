@@ -1,7 +1,7 @@
 public interface BinaryTreeInterface<T> extends TreeInterface<T> {
     
     /** Sets this binary tree to a new one-node binary tree.
-     * @param rootData The object tha tis the data for he new tree's root.
+     * @param rootData The object that is the data for the new tree's root.
      */
     public void setTree(T rootData);
 
