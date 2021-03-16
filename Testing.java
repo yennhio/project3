@@ -1,4 +1,5 @@
 import static org.junit.Assert.assertEquals;
+
 import org.junit.Test;
 
 public class Testing {
@@ -18,10 +19,9 @@ public class Testing {
         }
 
         BinaryTree<String> aTree = new BinaryTree<>();  
-        
+
     @Test
     public void testPostorderTraverse() {
-        
         createTree(aTree);
         aTree.postorderTraverse();    
     }
@@ -31,6 +31,19 @@ public class Testing {
         createTree(aTree);
         aTree.postorderTraverse_callBinaryNodeMethod();    
     }
+
+    @Test
+    public void testGetHeight() {
+        createTree(aTree);
+        assertEquals(4, aTree.getHeight());
+    }
+
+    @Test
+    public void testGetHeight_binaryNodeMethod() {
+        createTree(aTree);
+        assertEquals(4, aTree.getHeight_callBinaryNodeMethod());
+    }
+
     
     
 }
