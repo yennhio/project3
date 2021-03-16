@@ -79,7 +79,14 @@ public class Testing {
         assertEquals(8, aTree.getNumberOfNodes());
     }
 
-    
+    /** Tests BinaryNode.getNumberOfNodes_callBinaryNodeMethod()
+     * Computes the number of nodes in the whole tree.
+     */
+    @Test
+    public void getNumberOfNodes_callBinaryNodeMethod() {
+        createTree(aTree);
+        assertEquals(8, aTree.getNumberOfNodes());
+    }
 
     
     
