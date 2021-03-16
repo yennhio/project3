@@ -32,19 +32,21 @@ public class BinaryNode<T> {
         data = newData;
     }
 
-    /** Retrieves the left child of this node
-     * @return The node that is this node's left child
+    /** Retrieves the right child of this node
+     * @return The node that is this node's right child
      */
     public BinaryNode<T> getRightChild() {
         return rightChild;
     }
 
+    /** Sets this node’s right child to a given node.
+       @param newRightChild  A node that will be the right child. */
     public void setRightChild(BinaryNode<T> newRightChild) {
         rightChild = newRightChild;
     }
 
-    /** Detects whether this node has a left child
-     * @return True if the node has a left child
+    /** Detects whether this node has a right child
+     * @return True if the node has a right child
      */
     public boolean hasRightChild() {
         return rightChild != null;
@@ -57,6 +59,8 @@ public class BinaryNode<T> {
         return leftChild;
     }
 
+    /** Sets this node’s left child to a given node.
+       @param newLeftChild  A node that will be the left child. */
     public void setLeftChild(BinaryNode<T> newLeftChild) {
         leftChild = newLeftChild;
     }
@@ -75,6 +79,9 @@ public class BinaryNode<T> {
         return (leftChild == null) && (rightChild == null);
     }
     
+    /**A Recursion Example in the BinaryNode Class  
+    * Copies the subtree rooted at this node.
+       @return  The root of a copy of the subtree rooted at this node. */
     public BinaryNode<T> copy() {
         BinaryNode<T> newRoot = new BinaryNode<>(data);
         if (leftChild != null) 
@@ -85,6 +92,7 @@ public class BinaryNode<T> {
         return newRoot;
     }
 
+    /** Returns the left most data of the tree. */
     public T getLeftMostData() {
         if (leftChild == null)
             return data;
@@ -92,6 +100,7 @@ public class BinaryNode<T> {
             return leftChild.getLeftMostData();
     }
 
+    /** Returns the right most data of the tree. */
     public T getRightMostData() {
         if (rightChild == null)
             return data;
@@ -99,6 +108,7 @@ public class BinaryNode<T> {
             return rightChild.getRightMostData();
     }
 
+    /** Removes the left most data of the tree. */
     public BinaryNode<T> removeLeftMost() {
         if (leftChild == null) {
             return rightChild;
@@ -109,6 +119,7 @@ public class BinaryNode<T> {
         }
     }
 
+    /** Removes the right most data of the tree. */
     public BinaryNode<T> removeRightMost() {
         if (rightChild == null) {
             return leftChild;
@@ -118,6 +129,20 @@ public class BinaryNode<T> {
             return this;
         }
     }
+
+    /** Counts the nodes in the subtree rooted at "this" node.
+    * @return  The number of nodes in the subtree rooted at "this" node. 
+    */
+	public int getNumberOfNodes_binaryNodeMethod()
+	{
+	  int leftNumber = 0;
+	  int rightNumber = 0;
+	  if (leftChild != null)
+	     leftNumber = leftChild.getNumberOfNodes_binaryNodeMethod();
+	  if (rightChild != null)
+	     rightNumber = rightChild.getNumberOfNodes_binaryNodeMethod();
+	  return 1 + leftNumber + rightNumber;
+	}
 
 
     /** Performs postorder traversal of a subtree rooted at a BinaryNode object.
